@@ -1,4 +1,5 @@
 import copy
+import time
 
 def russian_peasant(a, b):
 
@@ -17,6 +18,11 @@ def russian_peasant(a, b):
     num1 = num1 // 2
     num2 = num2 * 2
 
-  print('{} + {} = {}'.format(a, b, sum(numbers_to_sum)))
+  # print('{} + {} = {}'.format(a, b, sum(numbers_to_sum)))
+  return sum(numbers_to_sum)
 
-russian_peasant(238, 13)
+assert russian_peasant(238, 13) == 3094
+
+start_time = time.time()
+print russian_peasant(238, 13)
+print "Russian peasant ran in %f seconds" % (time.time() - start_time)
