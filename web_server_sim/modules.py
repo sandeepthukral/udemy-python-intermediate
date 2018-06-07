@@ -13,4 +13,7 @@ if __name__ == "__main__":
   computer1.multiplyHandler(44,89)
   computer1.multiplyHandler(24,78)
   computer1.multiplyHandler(45,111)
-  computer1.multiplyHandler(45,113)
+  computer1.multiplyHandler(45,111)
+  computer1.multiplyHandler(45,53)
+  computer1.multiplyHandler(45,63)
+  computer1.multiplyHandler(45,73)

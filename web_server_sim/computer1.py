@@ -1,15 +1,15 @@
 import fake_database
 
 CACHE = {}
-last_file_resuts = []
+last_five_calculations = []
 
 def printName():
     return str(__name__)
 
 def updateLastMultiplied(a,b,result):
-  if len(last_file_resuts) == 5:
-    last_file_resuts.pop(0)
-  last_file_resuts.append((a,b,result))
+  if len(last_five_calculations) == 5:
+    last_five_calculations.pop(0)
+  last_five_calculations.append((a,b,result))
   pass
 
 
@@ -20,7 +20,9 @@ def lastMultipliedHandler():
     Outputs: The last multiplied result
     This is the last 5 multiplied questions/answers
     """
-    print(last_file_resuts)
+    list_last_results = [x[2] for x in last_five_calculations]
+    print 'Last five results : {}'.format(list_last_results)
+    print "--"*13
     pass
 
 
@@ -39,7 +41,7 @@ def multiplyHandler(a, b):
       result = fake_database.russian_peasant(a,b)
       updateLastMultiplied(a, b, result)
       CACHE[key] = result
-    print result
+    print 'Last result : {}'.format(result)
 
     lastMultipliedHandler()
     pass
