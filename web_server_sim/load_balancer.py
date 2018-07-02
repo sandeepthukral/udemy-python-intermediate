@@ -7,12 +7,20 @@ SERVERS = ['APP1', 'APP2', 'APP3']
 #   count = count + 1
 #   return SERVERS[count % len(SERVERS)]
 
-import itertools
-cycle = itertools.cycle(SERVERS)
+# import itertools
+# cycle = itertools.cycle(SERVERS)
+
+# def get_server():
+#   global cycle
+#   return cycle.next()
 
 def get_server():
-  global cycle
-  return cycle.next()
+  try:
+    return next(get_server.s)
+  except StopIteration:
+    get_server.s = iter(SERVERS)
+    return next(get_server.s)
+setattr(get_server, 's', iter(SERVERS))
 
 ### testing the function
 if __name__ == '__main__':
