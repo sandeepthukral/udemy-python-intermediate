@@ -22,7 +22,6 @@ def lastMultipliedHandler():
     """
     list_last_results = [x[2] for x in last_five_calculations]
     print 'Last five results : {}'.format(list_last_results)
-    print "--"*13
     pass
 
 
@@ -33,7 +32,7 @@ def multiplyHandler(a, b):
     Outputs: The result of those two numbers being sent thru
                 The Russuan Peasant's Algorithm.
     """
-    key =(a, b)
+    key = (a, b)
 
     if key in CACHE:
       result = CACHE[key]
@@ -43,5 +42,4 @@ def multiplyHandler(a, b):
       CACHE[key] = result
     print 'Last result : {}'.format(result)
 
-    lastMultipliedHandler()
     pass

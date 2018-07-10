@@ -18,7 +18,7 @@ def russian_peasant(a, b):
     num1 = num1 // 2
     num2 = num2 * 2
 
-  # print('{} + {} = {}'.format(a, b, sum(numbers_to_sum)))
+  print 'Hit DB!'
   return sum(numbers_to_sum)
 
 def test_russian():
