@@ -39,9 +39,9 @@ if __name__ == '__main__':
   from random import randint
 
   for i in range(15):
-    z = randint(1,3)
-    a = [44, 85, 123][z%3]
-    b = [54,15,32][z%3]
+    z = randint(1,5)
+    a = [44, 85, 123, 45, 66][z%5]
+    b = [54, 15, 32, 54, 33][z%5]
     # a = randint(5,99)
     # b = randint(5,99)
 

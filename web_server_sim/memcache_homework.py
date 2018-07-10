@@ -5,13 +5,16 @@
 ## delete(key)
 ## flush()
 
+MEMORY = {}
+
 class Memcache:
     def __init__(self):
-        self.CACHE = {}
+      global MEMORY
+      self.CACHE = MEMORY
 
     def set(self, key, value):
-       self.CACHE[key] = value
-       return True
+      self.CACHE[key] = value
+      return True
 
     def get(self, key):
       if key in self.CACHE:
