@@ -4,7 +4,7 @@
 #    - fill_in --> Create a new formula replacing letters with numbers
 #    - valid   --> Tests our filled-in string
 
-import re
+import re, itertools
 
 def solve(rawFormula):
     """
@@ -22,6 +22,16 @@ def fill_in(rawFormula):
     Generate all possible translations between Character string and Numbered String.
     """
     ## Your Code Here
+    # get all unique letters in the raw formula
+    uniqueChars = "SENDMORY"
+    # use this to generate permutaitons of
+    permutations = itertools.permutations('0123456789', len(uniqueChars))
+
+    transformedFormula = []
+    for permutation in permutations:
+      transformedFormula = rawFormula.translate(str.maketrans(rawFormula, ''.join(permutation)))
+
+    return transformedFormula
     pass
 
 def valid(formula):
