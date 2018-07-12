@@ -1,12 +1,13 @@
 
-
-userDefined = '23'
+userDefined = 'b'
 
 try:
   a = int(userDefined)
 except ValueError:
-  a = int(0)
+  print 'Error 1'
+except Exception:
+  print 'Error 0'
 except:
-  print 'something went wrong'
-finally:
+  print 'Error -1'
+else:
   print "a = {}".format(a)
